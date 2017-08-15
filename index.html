@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html ng-app="store_app">
+<head>
+    <title>Smartphone Store  App</title>
+    <link rel="stylesheet" href="styles/reset.css">
+    <link rel="stylesheet" href="styles/styles.css">
+</head>
+<body>
+	
+	<header class="header">
+		<div class="header__logo">
+			<h1>Mobile Store</h1>
+		</div>
+		<div class="header__search">
+			<form><input type="search" placeholder="Поиск"></form>
+		</div>
+		<div class="header__bag">
+			<span class="header__bag--icon ion-bag">
+				<div class="header__bag--round">1</div>
+			</span>
+		</div>
+	</header>
+	
+	<div class="container" ng-controller="ctrl_1">	
+
+		<div class="bag">
+			<div class="bag__sum">
+				<span>Количество товаров:</span><br />
+				<span>Общая стоимость:</span>
+			</div>
+			<table class="bag__buy">
+				<tr ng-repeat="x in data">
+					<td> <img src=" {{ x.picture }} " height="75" /> </td>
+					<td> {{ x.model }} </td>
+					<td> {{ x.price }} грн.</td>
+					<td><button ng-click="deleteFromList($index)">Удалить</button></td>
+				</tr>
+			</table>
+			<div class="bag__close"></div>
+		</div>
+		
+        <div class="product" ng-repeat="x in data">
+            <div class="product__img">
+                <img src=" {{ x.picture }} " height="110" />
+            </div>
+			<div class="product__name">
+				<h2> {{ x.model }} </h2>
+			</div>
+            <div class="product__description"> 
+				<span> {{ x.description1 }} </span><br />
+				<span> {{ x.description2 }} </span><br />
+				<span> {{ x.description3 }} </span><br />
+			</div>
+            <div class="product__price">Цена: {{ x.price }} грн.</div>
+			<div title="Купить" class="product__button ion-bag"></div>
+        </div>
+		
+    </div> 
+	
+	<footer class="footer">
+		<div class="footer__logo">
+			<h2>Mobile Store</h2>
+		</div>
+		<div class="footer__copyright">
+			<span>© 2017 All rights reserved</span>
+		</div>
+	</footer>
+
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+<script src="app/app.js"></script>
+<script src="app/app_model.js"></script>
+<script src="app/controllers/ctrl_1.js"></script>
+<script src="app/controllers/ctrl_2.js"></script>
+</body>
+</html>
