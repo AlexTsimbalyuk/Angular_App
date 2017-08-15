@@ -1,6 +1,6 @@
 var model = [
 	{
-		model: "Samsung Galaxy J5 Duos",
+		model: "Samsung Galaxy J5",
 		description1: "Диагональ экрана: 5''",
 		description2: "Количество ядер: 4",
 		description3: "Оперативная память: 2 Гб",
@@ -8,7 +8,7 @@ var model = [
 		picture: "images/1.jpg"
 	},
 	{
-		model: "Samsung Galaxy J5 2016 Duos",
+		model: "Samsung Galaxy J5 2016",
 		description1: "Диагональ экрана: 5.2''",
 		description2: "Количество ядер: 4",
 		description3: "Оперативная память: 2 Гб",
@@ -16,7 +16,7 @@ var model = [
 		picture: "images/2.jpg"
 	},
 	{
-		model: "Samsung Galaxy J7 2017 Duos",
+		model: "Samsung Galaxy J7 2017",
 		description1: "Диагональ экрана: 5.5''",
 		description2: "Количество ядер: 8",
 		description3: "Оперативная память: 3 Гб",
@@ -24,7 +24,7 @@ var model = [
 		picture: "images/3.jpg"
 	},
 	{
-		model: "Samsung Galaxy J5 2017 Duos",
+		model: "Samsung Galaxy J5 2017",
 		description1: "Диагональ экрана: 5.2''",
 		description2: "Количество ядер: 8",
 		description3: "Оперативная память: 2 Гб",
@@ -56,7 +56,7 @@ var model = [
 		picture: "images/7.jpg"
 	},
 	{
-		model: "Apple iPhone 6s 32GB Rose",
+		model: "Apple iPhone 6s 32GB",
 		description1: "Диагональ экрана: 4.7''",
 		description2: "Количество ядер: 2",
 		description3: "Оперативная память: 32 Гб",
@@ -64,7 +64,7 @@ var model = [
 		picture: "images/8.jpg"
 	},
 	{
-		model: "Apple iPhone 7 256GB Jet",
+		model: "Apple iPhone 7 256GB",
 		description1: "Диагональ экрана: 4.7''",
 		description2: "Количество ядер: 4",
 		description3: "Оперативная память: 256 Гб",
@@ -72,7 +72,7 @@ var model = [
 		picture: "images/9.jpg"
 	},
 	{
-		model: "Apple iPhone 6s 32GB Space",
+		model: "Apple iPhone 6s 32GB",
 		description1: "Диагональ экрана: 4.7''",
 		description2: "Количество ядер: 2",
 		description3: "Оперативная память: 32 Гб",

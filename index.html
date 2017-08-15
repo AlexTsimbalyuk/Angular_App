@@ -5,43 +5,27 @@
     <link rel="stylesheet" href="styles/reset.css">
     <link rel="stylesheet" href="styles/styles.css">
 </head>
-<body>
-	
+
+<body ng-controller="ctrl_1">
+
 	<header class="header">
 		<div class="header__logo">
 			<h1>Mobile Store</h1>
 		</div>
 		<div class="header__search">
-			<form><input type="search" placeholder="Поиск"></form>
+			<form><input ng-model="search" type="search" placeholder="Поиск"></form>
 		</div>
 		<div class="header__bag">
 			<span class="header__bag--icon ion-bag">
-				<div class="header__bag--round">1</div>
+				<div ng-if="removeElem" class="header__bag--round">{{ sum }}</div>
 			</span>
 		</div>
 	</header>
 	
-	<div class="container" ng-controller="ctrl_1">	
-
-		<div class="bag">
-			<div class="bag__sum">
-				<span>Количество товаров:</span><br />
-				<span>Общая стоимость:</span>
-			</div>
-			<table class="bag__buy">
-				<tr ng-repeat="x in data">
-					<td> <img src=" {{ x.picture }} " height="75" /> </td>
-					<td> {{ x.model }} </td>
-					<td> {{ x.price }} грн.</td>
-					<td><button ng-click="deleteFromList($index)">Удалить</button></td>
-				</tr>
-			</table>
-			<div class="bag__close"></div>
-		</div>
-		
-        <div class="product" ng-repeat="x in data">
+	<div class="container">	
+        <div class="product" ng-repeat="x in data | filter:search">
             <div class="product__img">
-                <img src=" {{ x.picture }} " height="110" />
+                <img src="{{ x.picture }}" height="110" />
             </div>
 			<div class="product__name">
 				<h2> {{ x.model }} </h2>
@@ -52,12 +36,33 @@
 				<span> {{ x.description3 }} </span><br />
 			</div>
             <div class="product__price">Цена: {{ x.price }} грн.</div>
-			<div title="Купить" class="product__button ion-bag"></div>
+			<div ng-click="addToBag($index)" title="Купить" class="product__button ion-bag"></div>
         </div>
 		
-    </div> 
+		<div ng-controller="ctrl_2" class="bag">
+			<table class="bag__buy">
+				<caption>Список покупок</caption>
+				<tr ng-repeat="x in data_buy">
+					<td> <img src="{{ x.buyPicture }}" height="75" /> </td>
+					<td> {{ x.buyModel }} </td>
+					<td> {{ x.buyPrice }} грн.</td>
+					<td>
+						<div title="Удалить" class="bag__buy--del ion-close" ng-click="delFromBag($index)"></div>
+					</td>
+				</tr>
+				<tr class="bag__sum">
+					<td>Количество покупок: {{ sum_buy }}</td>
+					<td colspan="2">Общая стоимость: {{ sumPrice }} грн.</td>
+					<td>
+						<div title="Оформить заказ" class="bag__sum--ok ion-checkmark" ng-click="deleteFromList($index)"></div>
+					</td>
+				</tr>
+			</table>
+			<div title="Закрыть" class="bag__close ion-close-round"></div>
+		</div>
+	</div>	
 	
-	<footer class="footer">
+ 	<footer class="footer">
 		<div class="footer__logo">
 			<h2>Mobile Store</h2>
 		</div>
