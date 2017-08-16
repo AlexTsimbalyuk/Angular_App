@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html ng-app="store_app">
 <head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Smartphone Store  App</title>
     <link rel="stylesheet" href="styles/reset.css">
     <link rel="stylesheet" href="styles/styles.css">
@@ -9,6 +11,7 @@
 <body ng-controller="ctrl_1">
 
 	<header class="header">
+	
 		<div class="header__logo">
 			<h1>Mobile Store</h1>
 		</div>
@@ -20,9 +23,11 @@
 				<div ng-if="removeElem" class="header__bag--round">{{ sum }}</div>
 			</span>
 		</div>
+		
 	</header>
 	
 	<div class="container">	
+	
         <div class="product" ng-repeat="x in data | filter:search">
             <div class="product__img">
                 <img src="{{ x.picture }}" height="110" />
@@ -43,7 +48,7 @@
 			<table class="bag__buy">
 				<caption>Список покупок</caption>
 				<tr ng-repeat="x in data_buy">
-					<td> <img src="{{ x.buyPicture }}" height="75" /> </td>
+					<td> <img src="{{ x.buyPicture }}" height="70" /> </td>
 					<td> {{ x.buyModel }} </td>
 					<td> {{ x.buyPrice }} грн.</td>
 					<td>
@@ -54,21 +59,24 @@
 					<td>Количество покупок: {{ sum_buy }}</td>
 					<td colspan="2">Общая стоимость: {{ sumPrice }} грн.</td>
 					<td>
-						<div title="Оформить заказ" class="bag__sum--ok ion-checkmark" ng-click="deleteFromList($index)"></div>
+						<div title="Оформить заказ" class="bag__sum--ok ion-checkmark" ng-click="getOrder()"></div>
 					</td>
 				</tr>
 			</table>
 			<div title="Закрыть" class="bag__close ion-close-round"></div>
 		</div>
+		
 	</div>	
 	
  	<footer class="footer">
+	
 		<div class="footer__logo">
 			<h2>Mobile Store</h2>
 		</div>
 		<div class="footer__copyright">
-			<span>© 2017 All rights reserved</span>
+			<span>&#169; 2017 All rights reserved</span>
 		</div>
+		
 	</footer>
 
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>

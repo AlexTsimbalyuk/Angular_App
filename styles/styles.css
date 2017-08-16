@@ -1,6 +1,16 @@
 @import url(https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css);
-@import url('https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz:400,700&subset=cyrillic');
-@import url('https://fonts.googleapis.com/css?family=Prompt');
+@font-face { 
+	font-family: 'Yanone'; 
+	src: url('../fonts/Yanone/YanoneKaffeesatz-Regular.woff') format('woff'); 
+	font-weight: normal; 
+	font-style: normal; 
+}
+@font-face { 
+	font-family: 'Prompt'; 
+	src: url('../fonts/Prompt/Prompt-Regular.woff') format('woff'); 
+	font-weight: normal; 
+	font-style: normal; 
+}
 * {
 	box-sizing: border-box;
 }
@@ -14,7 +24,7 @@ body {
 	align-items: center;
 	position: relative;
 	min-height: 100%;
-	font-family: 'Yanone Kaffeesatz', sans-serif;
+	font-family: 'Yanone', sans-serif;
 }
 .header {
 	display: flex;
@@ -173,19 +183,18 @@ body {
 	z-index: 2;
 	border: 25px solid #DFE4FF;
 	background-color: #FFFFFF;
-	font-size: 20px;
+	font-size: 18px;
 	font-weight: bold;
 	display: none;
 }
 .bag_visible {
 	display: flex;
-	transition: .5s;
 }
 .bag__buy {
 	display: flex;
 	flex-direction: column;
 	overflow: scroll;
-	margin-left: 10px;
+	margin-left: 10px;	
 }
 .bag__buy caption {
 	font-size: 30px;
@@ -200,7 +209,7 @@ body {
 }
 .bag__sum td {
 	color:  #797979;
-	padding: 15px 5px;
+	padding: 10px 5px;
 }
 .bag__buy--del {
 	font-size: 25px;
@@ -239,17 +248,23 @@ body {
 ::-webkit-scrollbar-thumb {
     background: #D6D6D6;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+@media screen and (max-width: 768px) {
+	.header__logo {
+		font-size: 30px;
+		padding-left: 10px;
+	}
+	.header__search input[type=search]:focus {
+		width: 150px;
+	}
+}
+@media screen and (max-width: 480px) {
+	.header__logo {
+		font-size: 25px;
+	}
+	.header__search input[type=search]:focus {
+		width: 120px;
+	}
+	.bag {	
+		font-size: 16px;
+	}
+}
