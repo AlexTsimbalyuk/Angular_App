@@ -31,6 +31,9 @@ body {
 	align-items: center;
 	width: 100%;
 	height: 70px;
+	position: relative;
+	top: 0;
+	left: 0;
 	background-color: #BAC5FF;
 	font-weight: bold;
 	color: #3046BF;
@@ -156,6 +159,7 @@ body {
 	height: 50px;
 	position: absolute;
 	bottom: 0;
+	left: 0;
 	background-color: #BAC5FF;
 	color: #3046BF;
 	text-shadow: 0 0 2px #FFFFFF, 0 0 2px #FFFFFF; 
@@ -188,13 +192,14 @@ body {
 	display: none;
 }
 .bag_visible {
-	display: flex;
+	display: flex;	
 }
 .bag__buy {
 	display: flex;
 	flex-direction: column;
+	margin-left: 10px;
 	overflow: scroll;
-	margin-left: 10px;	
+	overflow-x: hidden;	
 }
 .bag__buy caption {
 	font-size: 30px;
